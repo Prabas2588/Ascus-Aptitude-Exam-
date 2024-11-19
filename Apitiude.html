@@ -7,18 +7,19 @@
 </head>
 <style>
     .main{
-        width:50%;
-        max-width: 500px;
+        width:700px;
         margin: 20px auto;
         border: 1px solid black;
         padding: 20px;
         border-radius: 8px;
         text-align: center;
-        margin-top: 50px;
-        background-color: rgba(208, 205, 200, 0.619);
+        margin-top: 30px;
+        background-color: rgba(208, 205, 200, 0);
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
         font-size: 25px;
+        margin-right: 140px;
+
     }
     .options{
         list-style: none;
@@ -41,33 +42,59 @@
 }
 .button{    width: 100px;
     height: 50px;
-    background-color: rgb(189, 206, 152);
+    background-color: rgb(131, 173, 41);
+    border-radius: 20px;
+    border-color: rgba(0, 0, 139, 0);
 }
 button:hover {
-    background-color: rgb(209, 100, 100);
+    background-color: rgb(226, 72, 72);
 }
 #radio{
     height:20px; 
 width:20px;
+}
+body{
+    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+}
+#question{
+    font-weight:bolder;
+}
+button{
+    height: 50px;
+    width: 50px;
 }
 
 </style>
 <body id="body" style="text-align: center; font-size: 20px;">
     <p id="watermark">ASCUS TECH ONLINE EXAM</p>
     <img src="https://ascustech.in/wp-content/uploads/2024/05/Logo_B.png"  height="50px" style="margin-top: 30px; display: block; margin-left: auto; margin-right: auto;"><br><br>
-    <h2 style="text-align: center;">Online Exam</h2>
+    <h2 style="text-align: center;">Aptitude Online Exam</h2>
+<div style="display: flex; justify-content: space-between;align-items: center;">
     <div class="main">
         <div>
             <p class="question" id="question"></p>
             <ul class="options" id="options"></ul>
         </div>
         <div>
-            <button id="prevButton"  class="button"  onclick="prevQuestion()">Previous</button>
-            <button id="nextButton" class="button" onclick="nextQuestion()">Next</button><br><br>
-            <button id="submitButton" class="button" onclick="submitQuiz()">Submit</button>
+            <button id="prevButton"  class="button"  onclick="prevQuestion()"><b>Previous</b></button>
+            <button id="nextButton" class="button" onclick="nextQuestion()"><b>Next</b></button><br><br>
+            <button id="submitButton" class="button" onclick="submitQuiz()"><b>Submit</b></button>
         </div>
     </div>
-
+    <div>
+        <button onclick="q1()" >1</button>
+        <button onclick="q2()">2</button>
+        <button onclick="q3()">3</button>
+        <button onclick="q4()">4</button>
+        <button onclick="q5()">5</button><br><br>
+        <button onclick="q6()">6</button>
+        <button onclick="q7()">7</button>
+        <button onclick="q8()">8</button>
+        <button onclick="q9()">9</button>
+        <button onclick="q10()">10</button>
+    </div>
+</div>
+<a href="./Instructions.html" target="_blank" style="text-decoration: none; color: black;">Instructions</a>
     <script>
         const questions = [
             "1.What is the capital of France?",
@@ -98,7 +125,6 @@ width:20px;
         const correctAnswers = [2, 2, 1, 2, 2, 1, 1, 2, 0, 2];
         let currentQuestion = 0;
         let userAnswers = new Array(questions.length).fill(null);
-
         function loadQuestion() {
             document.getElementById("question").innerText = questions[currentQuestion];
             const options = document.getElementById("options");
@@ -113,7 +139,6 @@ width:20px;
                 radioInput.setAttribute("id","radio");
                 radioInput.addEventListener("click", () => {
                     userAnswers[currentQuestion] = index;
-                    // radioInput.setAttribute("class", "democlass"); 
                 });
 
                 optionItem.appendChild(radioInput);
@@ -126,11 +151,103 @@ width:20px;
             document.getElementById("nextButton").disabled = currentQuestion === questions.length - 1;
             document.getElementById("submitButton").disabled = currentQuestion !== questions.length - 1;
         }
+       
+        function q1(){
+            currentQuestion=0;
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion;
+                loadQuestion();
 
+              
+            }
+        }
+        function q2(){
+            currentQuestion=0;
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion=currentQuestion+1;
+                loadQuestion();
+
+              
+            }
+        }
+        function q3(){
+            currentQuestion=0;
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion=currentQuestion+2;
+                loadQuestion();
+
+              
+            }
+        }
+        function q4(){
+            currentQuestion=0;
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion=currentQuestion+3;
+                loadQuestion();
+
+              
+            }
+        }
+        function q5(){
+            currentQuestion=0;
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion=currentQuestion+4;
+                loadQuestion();
+
+              
+            }
+        }
+        function q6(){
+            currentQuestion=0;
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion=currentQuestion+5;
+                loadQuestion();
+
+              
+            }
+        }
+        function q7(){
+            currentQuestion=0;
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion=currentQuestion+6;
+                loadQuestion();
+
+              
+            }
+        }
+        function q8(){
+            currentQuestion=0;
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion=currentQuestion+7;
+                loadQuestion();
+
+              
+            }
+        }
+        function q9(){
+            currentQuestion=0;
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion=currentQuestion+8;
+                loadQuestion();
+
+              
+            }
+        }
+        function q10(){
+            currentQuestion=0;
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion=currentQuestion+9;
+                loadQuestion();
+
+              
+            }
+        }
         function nextQuestion() {
             if (currentQuestion < questions.length - 1) {
                 currentQuestion++;
                 loadQuestion();
+
+              
             }
         }
 
@@ -140,7 +257,8 @@ width:20px;
                 loadQuestion();
             }
         }
-
+      
+        
         function submitQuiz() {
             let score = 0;
             userAnswers.forEach((answer, index) => {
@@ -149,7 +267,7 @@ width:20px;
                 }
             });
             alert("Click 'OK' To submit");
-            document.getElementById("body").innerHTML = "your score:" +score;
+            document.getElementById("body").innerHTML = "Submitted sucessfully";
         }
 
         loadQuestion();
